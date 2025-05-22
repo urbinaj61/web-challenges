@@ -80,6 +80,8 @@ section {
 
 .subtitle {
   border-left: 3px solid orange;
+  border-right: 3px solid orange;
+  display: inline;
 }
 
 /* ------- List ------- */
