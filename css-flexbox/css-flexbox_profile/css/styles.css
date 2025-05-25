@@ -3,7 +3,7 @@
 }
 
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   padding: 40px;
   margin: 0 auto;
   max-width: 1200px;
@@ -19,17 +19,28 @@ h2 {
   color: #3f0097;
 }
 
+.profile {
+  display: flex;
+  flex-direction: column;
+}
+
 .profile__image {
   object-fit: cover;
   border-radius: 999px;
   aspect-ratio: 1 / 1;
   border: solid #3f0097 1px;
   max-width: 50%;
+
+  align-self: center;
 }
 
 .tech-stack__list {
   list-style: none;
   padding-left: 0;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .tech-stack__list-item {
