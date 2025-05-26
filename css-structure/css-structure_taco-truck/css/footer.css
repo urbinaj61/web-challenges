@@ -1,0 +1,13 @@
+.footer {
+  position: sticky;
+  top: 0;
+  background: var(--header-bg);
+  color: var(--header-text);
+  padding: 20px;
+}
+
+.footer__copyright {
+  margin: 0;
+  font-weight: bold;
+  font-size: 1.2em;
+}
