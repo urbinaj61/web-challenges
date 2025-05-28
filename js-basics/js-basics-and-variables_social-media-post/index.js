@@ -10,7 +10,11 @@ console.clear();
 */
 
 // --v-- write your code here --v--
-
+const title = 'Aliens';
+const post = 'The aliens have arrived';
+let likes = 10;
+const creator = 'Fred Flintstone';
+const isReported = true;
 // --^-- write your code here --^--
 
 /*
@@ -18,5 +22,8 @@ console.clear();
 */
 
 // --v-- write your code here --v--
+console.log(title, post, likes, creator, isReported);
 
 // --^-- write your code here --^--
+likes++;
+console.log(title, post, likes, creator, isReported);
