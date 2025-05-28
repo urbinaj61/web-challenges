@@ -7,6 +7,7 @@ based on the cost of the meal and the percentage of the tip.
 1. Define two variables:
    - A variable that stores the value of the meal cost.
    - A variable that stores the value of the tip percentage.
+   
 
 2. Calculate the tip amount by multiplying the meal cost by the tip percentage, and store the result in a variable called `tipAmount`.
 
@@ -14,3 +15,10 @@ based on the cost of the meal and the percentage of the tip.
 
 4. Log a message to the console that includes the meal cost, tip amount, and total cost.
 */
+
+let mealCost = 23;
+let tipPercentage = 7;
+let tipAmount = (mealCost * tipPercentage) / 100;
+let totalCost = mealCost + tipAmount;
+console.log(tipAmount);
+console.log(totalCost);
