@@ -17,6 +17,20 @@ Hint: You can combine text and variables using the `+` operator.
 💡 For simplicity, ignore leap years.
 */
 
+let totalDaysLived;
+let yearDays = 365;
+const lifeSpan = 80;
+const sleepHours = 8;
+let remainingDays;
+let alreadyLivedPercentage;
+let slept;
+
 const currentAge = Number(process.argv[2]); // This takes the `<age>` entered in the command `node index.js <age>`.
 
-console.log("Your current age is: " + currentAge);
+totalDaysLived = yearDays * currentAge;
+remainingDays = lifeSpan - currentAge * yearDays;
+alreadyLivedPercentage = currentAge / lifeSpan;
+slept = currentAge * yearDays * sleepHours;
+
+console.log('Your current age is: ' + currentAge);
+console.log(totalDaysLived, remainingDays, alreadyLivedPercentage, slept);
