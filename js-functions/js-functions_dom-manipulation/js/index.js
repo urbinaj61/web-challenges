@@ -12,35 +12,34 @@ We want to add functionality to the buttons on this page. When a button is click
 */
 
 redButton.addEventListener("click", () => {
-  /*
-  Use your functions to:
-    - remove all classes
-    - then add the class name: "red"
-  */
+  removeAllColors();
+  box.classList.add("box");
+  addColor("red");
 });
 
 blueButton.addEventListener("click", () => {
-  /*
-  Use your functions to:
-    - remove all classes
-    - then add the class name: "blue"
-  */
+  removeAllColors();
+  box.classList.add("box");
+  addColor("blue");
 });
 
 greenButton.addEventListener("click", () => {
-  /*
-  Use your functions to:
-    - remove all classes
-    - then add the class name: "green"
-  */
+  removeAllColors();
+  box.classList.add("box");
+  addColor("green");
 });
 
 grayButton.addEventListener("click", () => {
-  /*
-  Use your functions to:
-    - remove all classes
-    - then add the class name: "gray"
-  */
+  removeAllColors();
+  box.classList.add("box");
+  addColor("gray");
 });
 
 // Write your two functions below:
+function removeAllColors() {
+  box.classList.remove(...box.classList);
+}
+
+function addColor(colour) {
+  box.classList.add(colour);
+}
