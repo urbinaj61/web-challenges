@@ -68,5 +68,5 @@ function getDayColor(dayColour) {
   return dayColour;
 }
 
-display.textContent = getGreeting(5);
+display.textContent = getGreeting(currentHour);
 document.body.style.backgroundColor = getDayColor(dayColour);
