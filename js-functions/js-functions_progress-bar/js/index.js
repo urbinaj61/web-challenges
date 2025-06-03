@@ -9,4 +9,4 @@ const calculateScrollPercentage = () => {
   progressBar.style.width = scrollPercentage;
 };
 
-document.addEventListener("scroll", () => calculateScrollPercentage());
+document.addEventListener("scroll", calculateScrollPercentage);
