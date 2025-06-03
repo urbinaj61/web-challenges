@@ -1,54 +1,87 @@
 * {
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
 }
 
 body {
+  display: flex;
+  flex-direction: column;
   margin: 20px auto;
-  max-width: 340px;
+  max-width: 450px;
   background-color: rgb(255, 255, 255);
   color: rgb(37, 38, 41);
   font-family: PolySans, sans-serif;
 }
 
+h1 {
+  margin-bottom: 30px;
+}
+
+h4 {
+  margin: 10px;
+}
+
 button {
   margin-top: 0.5rem;
-  background-color: rgb(229, 67, 15);
+  height: 30px;
+  background-color: #e5430f;
   color: rgb(255, 255, 255);
   text-decoration: none;
   border-radius: 4px;
   border: none;
+  cursor: pointer;
 }
 
 form {
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   width: 90%;
-  margin: 5px auto;
-  padding: 10px;
+  margin: 15px 15px;
+  padding: 15px;
   border: 1px solid rgb(37, 38, 41);
   border-radius: 5px;
 }
 
 fieldset {
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  width: 370px;
   gap: 5px;
   border-radius: 5px;
   border: 1px solid rgb(37, 38, 41);
 }
 
+label {
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+input {
+  margin: 4px 10px 6px 10px;
+  width: 300px;
+  height: 25px;
+}
+
 input[type="color"] {
+  width: 70px;
   margin: auto;
 }
 
 legend {
-  background-color: rgb(255, 255, 255);
-  color: rgb(229, 67, 15);
+  color: #e5430f;
   padding: 0.4rem;
+  margin: 1rem;
   border-radius: 4px;
   border: 1px solid rgb(37, 38, 41);
+  font-weight: bold;
 }
 
 select {
-  background-color: rgb(229, 67, 15);
+  background-color: #e5430f;
   color: rgb(255, 255, 255);
   border-radius: 5px;
+  margin: 2px 15px 10px 15px;
 }
