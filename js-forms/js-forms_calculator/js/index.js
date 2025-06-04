@@ -3,30 +3,55 @@ console.clear();
 const form = document.querySelector('[data-js="form"]');
 const resultOutput = document.querySelector('[data-js="result"]');
 
-function add(a, b) {
+const add = (a, b) => {
   return a + b;
-}
+};
 
-function subtract(a, b) {
+const subtract = (a, b) => {
   return a - b;
-}
+};
 
-function multiply(a, b) {
+const multiply = (a, b) => {
   return a * b;
-}
+};
 
-function divide(a, b) {
+const divide = (a, b) => {
   return a / b;
-}
+};
 
-form.addEventListener("submit", (event) => {
+form.addEventListener("submit", event => {
   event.preventDefault();
+  const numberA = Number(event.target.numberA.value);
+  const numberB = Number(event.target.numberB.value);
+  const operator = event.target.operator.value;
 
   let result;
 
-  // --v-- write your code here --v--
+  switch (operator) {
+    case "addition":
+      {
+        result = add(numberA, numberB);
+      }
+      break;
 
-  // --^-- write your code here --^--
+    case "subtraction":
+      {
+        result = subtract(numberA, numberB);
+      }
+      break;
+
+    case "multiplication":
+      {
+        result = multiply(numberA, numberB);
+      }
+      break;
+
+    case "division":
+      {
+        result = divide(numberA, numberB);
+      }
+      break;
+  }
 
   resultOutput.textContent = result;
 });
