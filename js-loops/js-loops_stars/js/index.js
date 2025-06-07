@@ -25,18 +25,24 @@ const renderStars = filledStars => {
   // }
 
   //part three
+
   for (let i = 1; i <= 5; i++) {
     const star = document.createElement("img");
-    star.src = "./assets/star-empty.svg";
+
     star.setAttribute("id", i);
+    filledStars === !0
+      ? i <= filledStars
+        ? (star.src = "./assets/star-filled.svg")
+        : (star.src = "./assets/star-empty.svg")
+      : (star.src = "./assets/star-empty.svg");
+
     starContainer.append(star);
 
     star.addEventListener("click", () => {
       const index = Number(star.getAttribute("id"));
-      star.src = "./assets/star-filled.svg";
-
-      //Not finished...........
+      console.log(index);
+      renderStars(index);
     });
   }
 };
-renderStars();
+renderStars(5);
