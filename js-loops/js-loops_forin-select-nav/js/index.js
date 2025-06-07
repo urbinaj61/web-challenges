@@ -40,10 +40,9 @@ navElement.append(ul);
 for (const anchor in nav) {
   const li = document.createElement("li");
   const anchorRef = document.createElement("a");
-  if (nav[anchor] === "href") anchorRef.setAttribute("href", nav[anchor].href);
-  if (nav[anchor] === "text") anchorRef.textContent = nav[anchor].text;
-  console.log(nav[anchor]);
+  anchorRef.setAttribute("href", nav[anchor].href);
+  anchorRef.textContent = nav[anchor].text;
 
-  li.append(anchor);
+  li.append(anchorRef);
   ul.append(li);
 }
