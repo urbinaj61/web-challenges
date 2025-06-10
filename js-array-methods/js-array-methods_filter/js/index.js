@@ -24,13 +24,40 @@ const cards = [
   },
 ];
 
-const onlyCardWithIdTwo = null;
+const onlyCardWithIdTwo = cards.filter(card => {
+  if (card.id === "2") {
+    return true;
+  } else {
+    return false;
+  }
+});
 
-const allCardsWith3Tags = null;
+const allCardsWith3Tags = cards.filter(card => {
+  if (card.tags.length === 3) {
+    return true;
+  } else {
+    return false;
+  }
+});
 
-const allCardsThatAreNotBookmarked = null;
+const allCardsThatAreNotBookmarked = cards.filter(card => {
+  if (!card.isBookmarked) {
+    return true;
+  } else {
+    return false;
+  }
+});
 
-const allCardsWithTagsHTMLOrJSThatAreBookmarked = null;
+const allCardsWithTagsHTMLOrJSThatAreBookmarked = cards.filter(card => {
+  if (
+    (card.tags.includes("html") && card.isBookmarked) ||
+    (card.tags.includes("js") && card.isBookmarked)
+  ) {
+    return true;
+  } else {
+    return false;
+  }
+});
 
 export {
   onlyCardWithIdTwo,
