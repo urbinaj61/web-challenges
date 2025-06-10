@@ -4,15 +4,19 @@ import { Country } from "./components/Country/Country.js";
 const container = document.querySelector('[data-js="card-container"]');
 const queryInput = document.querySelector('[data-js="query-input"]');
 
-queryInput.addEventListener("input", (event) => {
+queryInput.addEventListener("input", event => {
   container.innerHTML = "";
 
   const searchString = event.target.value;
 
-  const foundCountry = null;
+  const foundCountries = countries.filter(country =>
+    country.name.startsWith(searchString)
+  );
 
-  if (foundCountry) {
-    const countryElement = Country(foundCountry);
-    container.append(countryElement);
-  }
+  foundCountries.every(country => {
+    if (country.name) {
+      const countryElement = Country(country);
+      container.append(countryElement);
+    }
+  });
 });
