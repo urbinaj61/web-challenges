@@ -1,11 +1,11 @@
 import { zooAnimals } from "../utils/db.js";
 
-// This website uses a function to check wether a specific animal is part of the zoo or not but it's not working correct.
+// This website uses a function to check whether a specific animal is part of the zoo or not but it's not working correctly.
 // Please implement the function 'hasAnimal' that gets an array of animals and an animal name
 // The function should return 'true' if the animal name is included in the array or 'false' if not.
 
 function hasAnimal(animals, animalName) {
-  return null;
+  if (animals.includes(animalName)) return true;
 }
 
 // Bonus:
@@ -20,19 +20,27 @@ const animalList = document.querySelector("[data-js='animalList']");
 const animalForm = document.querySelector("[data-js='animalForm']");
 const output = document.querySelector("[data-js='output']");
 
-animalForm.addEventListener("submit", (event) => {
+hasAnimal(zooAnimals, "Sheep");
+
+animalForm.addEventListener("submit", event => {
   event.preventDefault();
-  const searchQuery = event.target.searchQuery.value;
+  const searchQuery = event.target.searchQuery.value.toUpperCase();
+  const zooAnimalsUpperCase = zooAnimals.map(animal => {
+    return animal.toUpperCase();
+  });
+
   output.textContent = "";
   if (searchQuery.trim() === "") {
     return;
   }
-  const result = hasAnimal(zooAnimals, searchQuery);
+
+  const result = hasAnimal(zooAnimalsUpperCase, searchQuery);
+  console.log(result);
   output.textContent = result
     ? `Yes, we have ${searchQuery}`
     : `No, we don't have ${searchQuery}`;
 });
-zooAnimals.forEach((animal) => {
+zooAnimals.forEach(animal => {
   const tag = document.createElement("span");
   tag.classList.add("tag");
   tag.textContent = animal;
