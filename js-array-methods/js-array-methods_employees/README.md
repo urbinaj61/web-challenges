@@ -4,7 +4,7 @@ This challenge tasks you with navigating a large dataset of over 500 employees, 
 
 ## Tasks
 
-Take a look at the browser preview. You will see large set of index cards, one card for each employee. There are four forms that help you finding a specific employees. Unfortunately the forms do not work correct. Your task is to implement the corresponding functions correctly. See `./js/index.js` for more information.
+Take a look at the browser preview. You will see large set of index cards, one card for each employee. There are four forms that help you to find a specific employees. Unfortunately the forms do not work correct. Your task is to implement the corresponding functions correctly. See `./js/index.js` for more information.
 
 Switch to the `./js/index.js` file and make something great happen!
 
