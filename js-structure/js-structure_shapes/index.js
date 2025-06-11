@@ -1,4 +1,4 @@
-import { getRandomColor } from "./utils/randomColor";
+import { getRandomColor } from "./utils/randomColor.js";
 
 console.clear();
 
