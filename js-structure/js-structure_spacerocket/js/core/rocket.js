@@ -13,10 +13,12 @@ export const rocket = {
 
 export function getNewRocket() {
   // Dirty deep clone 🫠
+  console.log(rocket);
   return JSON.parse(JSON.stringify(rocket));
 }
 
 export function getRocket() {
+  console.log(window);
   if (!window.rocket) {
     throw new Error("No rocket found");
   }
