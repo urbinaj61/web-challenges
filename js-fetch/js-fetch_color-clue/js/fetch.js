@@ -17,7 +17,11 @@ export async function fetchNewColor() {
    *  - and the name of the random color
    */
 
-  // --v-- your code here --v--
+  const fetchData = async () => {
+    const response = await fetch(colorApiUrl);
+    const data = await response.json();
+    setColorToGuess(data.hex.value, data.name.value);
+  };
 
-  // --^-- your code here --^--
+  fetchData();
 }
