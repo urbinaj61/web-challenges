@@ -10,6 +10,15 @@ async function fetchUserData(url) {
       headers: { "x-api-key": "reqres-free-v1" },
     });
 
+    const type = response.headers.get("content-type");
+
+    if (!type.includes("application/json"))
+      throw new Error(`This is not JSON it's ${type}`);
+    if (!response.ok)
+      throw new Error(
+        `Something has gone terribly wrong. Status is ${response.status}`
+      );
+
     return await response.json();
   } catch (error) {
     return { error: error.message };
@@ -23,7 +32,7 @@ const endpoints = [
   { name: "Invalid API link", url: "https://reqres.in" },
 ];
 
-endpoints.forEach((endpoint) => {
+endpoints.forEach(endpoint => {
   const button = document.createElement("button");
   button.textContent = endpoint.name;
   actionsElement.append(button);
