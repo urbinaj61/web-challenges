@@ -2,7 +2,7 @@ console.clear();
 
 /*
 EXERCISE 1
-a) Destructure the `person` object and extract the variables `age` and `contact`.
+a) Destructure the `person` object and extract the variable `age`.
 b) Use the rest parameter to collect the values of `name`, `email`, and `phone`
    and put them into `contact`.
 c) Make sure to export your variable as shown in the example below to make the tests work.
@@ -17,6 +17,8 @@ const person = {
 
 // Example: export const { value 1 } = myObject;
 
+export const { age, ...contact } = person;
+
 /*
 EXERCISE 2
 Use array destructuring to extract the variables `first` and `second`;
@@ -24,6 +26,8 @@ all other items should go into a variable called `restOfList`.
 */
 
 const list = ["one", "two", "three", "four", "five"];
+
+export const [first, second, ...restOfList] = list;
 
 /*
 EXERCISE 3
@@ -33,11 +37,11 @@ c) Make sure you understand what the rest syntax does here.
 d) Note that the optional chaining `?.` is used to prevent an error from occuring.
 */
 
-function add(allNumbers) {
+function add([...allNumbers]) {
   return allNumbers.reduce?.((a, b) => a + b);
 }
 
-export const sum = add(3, 2, 3, 2, 1, 2, 3, 4);
+export const sum = add([3, 2, 3, 2, 1, 2, 3, 4]);
 
 /*
 EXERCISE 4
@@ -59,3 +63,4 @@ c) Remember to export `allFruits`.
 
 const fruits = ["apple", "banana", "orange", "papaya"];
 const anotherFruit = "cherry";
+export const allFruits = [anotherFruit, ...fruits];
