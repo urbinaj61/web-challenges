@@ -1,5 +1,6 @@
 import "./styles.css";
+import Article from "./components/Article";
 
 export default function App() {
-  return <div>Replace me with your Component!</div>;
+  return <Article />;
 }
