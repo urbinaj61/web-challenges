@@ -1,3 +1,5 @@
+import Button from "./components/Button.jsx";
+
 export default function App() {
-  return <h1>Replace me with your component!</h1>;
+  return <Button text='This is a button' disabled colour={"red"} />;
 }
