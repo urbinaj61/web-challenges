@@ -1,6 +1,10 @@
-const button = ({ colour, disabled, text }) => {
+const button = ({ colour, disabled, text, onClickHandler }) => {
   return (
-    <button disabled={disabled} style={{ color: colour }}>
+    <button
+      disabled={disabled}
+      style={{ color: colour }}
+      onClick={onClickHandler}
+    >
       {text}
     </button>
   );
