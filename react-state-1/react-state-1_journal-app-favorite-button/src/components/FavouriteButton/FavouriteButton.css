@@ -1,4 +1,4 @@
-.favorite-button {
+.favourite-button {
   appearance: none;
   background: none;
   border: none;
@@ -11,10 +11,10 @@
   padding: 6px;
 }
 
-.favorite-button:hover {
+.favourite-button:hover {
   background-color: var(--color-water);
 }
 
-.favorite-button:active {
+.favourite-button:active {
   background-color: var(--color-water-10);
 }
