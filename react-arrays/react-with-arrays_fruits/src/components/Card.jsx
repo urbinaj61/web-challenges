@@ -1,5 +1,8 @@
 import "./Card.css";
 
-export default function Card({ name }) {
-  return <p className="card">{name}</p>;
-}
+const Card = ({ fruit }) => {
+  const { fruitName, colour } = fruit;
+  return <p className={`card  ${colour}`}>{fruitName}</p>;
+};
+
+export default Card;

@@ -1,11 +1,14 @@
-import Card from "./components/Card";
+import Card from "./components/Card.jsx";
+import fruits from "./data/fruits.js";
 
 export default function App() {
-  const fruits = [];
+  const fruitData = fruits.map(fruit => {
+    return (
+      <div key={fruit.id} className='app'>
+        <Card fruit={fruit} />
+      </div>
+    );
+  });
 
-  return (
-    <div className="app">
-      <Card name="🍌 banana" />
-    </div>
-  );
+  return fruitData;
 }
