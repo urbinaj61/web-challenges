@@ -1,5 +1,3 @@
-// import image from "../assets/Butch.jpeg";
-
 const Card = ({ name, craft, image }) => {
   return (
     <section className='container'>
