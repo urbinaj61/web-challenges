@@ -3,19 +3,20 @@ import { useState } from "react";
 
 export default function App() {
   const [showMessage, setShowMessage] = useState(false);
+  const [message, setMessage] = useState("Secret message incoming...");
 
   if (!showMessage) {
     return (
-      <div className="container">
+      <div className='container'>
         <h1>
           Message is hidden{" "}
-          <span role="img" aria-label="scream">
+          <span role='img' aria-label='scream'>
             😱
           </span>
         </h1>
         <button
-          type="button"
-          className="button"
+          type='button'
+          className='button'
           onClick={() => setShowMessage(true)}
         >
           Show Message
@@ -24,20 +25,18 @@ export default function App() {
     );
   }
 
-  const [message, setMessage] = useState("Secret message incoming...");
-
   return (
-    <div className="container">
+    <div className='container'>
       <button
-        type="button"
-        className="button"
+        type='button'
+        className='button'
         onClick={() => setShowMessage(false)}
       >
         Hide Message
       </button>
       <button
-        type="button"
-        className="button"
+        type='button'
+        className='button'
         onClick={() =>
           setMessage("The secret of Monkey Island is ... wait, no spoilers!")
         }
