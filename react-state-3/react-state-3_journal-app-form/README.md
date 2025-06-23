@@ -12,7 +12,7 @@ In this challenge we want to store the entries information in a state to be able
 
 Nice, the entries are stored in state now! 🚀
 
-### Life the state up
+### Lift the state up
 
 The component rendering the entries and the component with the form needs to share this state of entries. We need to lift the state up to the first common ancestor of these two components. In the template it is the `App` component.
 
@@ -51,8 +51,7 @@ Your new journal entry needs a date.
 
 ```jsx
 const date = new Date().toLocaleDateString("en-us", { dateStyle: "medium" });
-
-````
+```
 
 Each entry in the `entries` array needs an ID – a unique identifier.
 
@@ -62,7 +61,7 @@ Each entry in the `entries` array needs an ID – a unique identifier.
 
 ```sh
 npm install uid
-````
+```
 
 - Call the `setEntries` function and insert the new entry at the beginning of the array.
 - Pass the `handleAddEntry` function with the prop `onAddEntry` to the `EntryForm` component.
