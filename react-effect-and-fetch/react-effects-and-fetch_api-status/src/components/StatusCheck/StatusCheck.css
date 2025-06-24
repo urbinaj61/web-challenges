@@ -22,6 +22,11 @@
   align-self: center;
 }
 
+.status-check__text {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
 .status-check__wrapper {
   display: flex;
   justify-content: space-evenly;
