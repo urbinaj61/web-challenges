@@ -5,13 +5,20 @@ const apiStatusUrl = "https://example-apis.vercel.app/api/status";
 
 export default function StatusCheck() {
   const [statusIcon, setStatusIcon] = useState("✅");
+  const [data, setData] = useState("");
+  const [error, setError] = useState("");
 
   const handleCheckApiStatus = async () => {
-    const response = await fetch(apiStatusUrl);
-
-    const data = await response.json();
     setStatusIcon("⏳");
-    data.status === "ok" ? setStatusIcon("✅") : setStatusIcon("❌");
+    try {
+      const response = await fetch(apiStatusUrl);
+      const data = await response.json();
+      setData(data);
+      data.status === "Ok" ? setStatusIcon("✅") : setStatusIcon("❌");
+    } catch (error) {
+      setError(error, "🚨");
+      setStatusIcon("🚨");
+    }
   };
 
   return (
@@ -26,7 +33,9 @@ export default function StatusCheck() {
         onClick={handleCheckApiStatus}
       >
         Check API Status
-      </button>
+      </button>{" "}
+      <span className='status-check__text'>{data.status}</span>
+      <span className='status-check__text'>{error}</span>
     </article>
   );
 }
