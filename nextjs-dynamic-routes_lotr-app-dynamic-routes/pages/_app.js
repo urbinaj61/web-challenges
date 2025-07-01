@@ -1,10 +1,13 @@
 import { GlobalStyle } from "../styles";
+import { volumes } from "../lib/data.js";
 
-export default function App({ Component, pageProps }) {
+const App = ({ Component, pageProps }) => {
   return (
     <>
       <GlobalStyle />
-      <Component {...pageProps} />
+      <Component {...pageProps} volumes={volumes} />
     </>
   );
-}
+};
+
+export default App;

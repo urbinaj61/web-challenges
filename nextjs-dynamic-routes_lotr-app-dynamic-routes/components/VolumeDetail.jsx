@@ -1,16 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { volumes } from "../../lib/data.js";
 
-export default function VolumeDetail() {
-  const volumeIndex = volumes.findIndex(
-    (volume) => volume.slug === "the-two-towers"
-  );
-
-  const volume = volumes[volumeIndex];
-  const nextVolume = volumes[volumeIndex + 1];
-  const previousVolume = volumes[volumeIndex - 1];
-
+const VolumeDetail = ({ volume, nextVolume, previousVolume }) => {
   if (!volume) {
     return null;
   }
@@ -30,25 +21,28 @@ export default function VolumeDetail() {
         ))}
       </ul>
       <Image
+        fetchpriority="high"
         src={cover}
         alt={`Cover image of ${title}`}
         width={140}
         height={230}
       />
-      <div>
-        {previousVolume ? (
+      {previousVolume ? (
+        <div>
           <Link href={`/volumes/${previousVolume.slug}`}>
             ← Previous Volume: {previousVolume.title}
           </Link>
-        ) : null}
-      </div>
-      <div>
-        {nextVolume ? (
+        </div>
+      ) : null}
+      {nextVolume ? (
+        <div>
           <Link href={`/volumes/${nextVolume.slug}`}>
             Next Volume: {nextVolume.title} →
           </Link>
-        ) : null}
-      </div>
+        </div>
+      ) : null}
     </>
   );
-}
+};
+
+export default VolumeDetail;
