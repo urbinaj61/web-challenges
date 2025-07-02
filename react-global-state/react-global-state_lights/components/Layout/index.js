@@ -30,7 +30,7 @@ export default function Layout({ children, isDimmed }) {
   return (
     <StyledLayout>
       <Background $isDimmed={isDimmed}>
-        <StyledImage src="/images/home.jpg" fill alt="" />
+        <StyledImage src='/images/home.jpg' fill alt='' />
       </Background>
       <Content>{children}</Content>
     </StyledLayout>
