@@ -2,23 +2,27 @@ import styled from "styled-components";
 import Link from "next/link";
 import Layout from "../components/Layout";
 
-export default function HomePage() {
+export default function HomePage({ data }) {
+  console.log(data.results);
   return (
     <Layout>
       <h1>React Data Fetching: Star Wars</h1>
       <List>
-        <li>
-          <StyledLink href="/characters/1">Luke Skywalker</StyledLink>
+        {data?.results?.map(({ name, i }) => {
+          return <StyledLink href='/{name}/{i}'>{name}</StyledLink>;
+        })}
+        {/* <li>
+          <StyledLink href='/characters/1'>Luke Skywalker</StyledLink>
         </li>
         <li>
-          <StyledLink href="/characters/2">C-3PO</StyledLink>
+          <StyledLink href='/characters/2'>C-3PO</StyledLink>
         </li>
         <li>
-          <StyledLink href="/characters/3">R2-D2</StyledLink>
+          <StyledLink href='/characters/3'>R2-D2</StyledLink>
         </li>
         <li>
-          <StyledLink href="/characters/4">Darth Vader</StyledLink>
-        </li>
+          <StyledLink href='/characters/4'>Darth Vader</StyledLink>
+        </li> */}
       </List>
     </Layout>
   );
