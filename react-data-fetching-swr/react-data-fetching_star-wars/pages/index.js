@@ -8,8 +8,8 @@ export default function HomePage({ data }) {
     <Layout>
       <h1>React Data Fetching: Star Wars</h1>
       <List>
-        {data?.results?.map(({ name, i }) => {
-          return <StyledLink href='/{name}/{i}'>{name}</StyledLink>;
+        {data?.results?.map(({ name }, i) => {
+          return <StyledLink href={`/characters/${i + 1}`}>{name}</StyledLink>;
         })}
         {/* <li>
           <StyledLink href='/characters/1'>Luke Skywalker</StyledLink>
