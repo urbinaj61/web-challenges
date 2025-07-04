@@ -3,9 +3,7 @@ import Layout from "../../components/Layout";
 import { useRouter } from "next/router";
 import useSWR from "swr";
 
-const fetcher = (...args) => fetch(...args).then(res => res.json());
-
-export default function Character() {
+export default function Character({ fetcher }) {
   const router = useRouter();
   const { id } = router.query;
 
