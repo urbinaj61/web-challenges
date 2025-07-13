@@ -1,13 +1,14 @@
 export default function Comments({ reviews }) {
+  console.log({ reviews });
   return (
     <>
-      <h3>Comments</h3>
+      <h3>comments</h3>
       <ul>
-        {reviews.map((review) => (
-          <li key={review._id}>
-            <p>
-              {review.rating}/5: {review.text}
-            </p>
+        {reviews?.map(({ _id, rating, text, title }) => (
+          <li key={_id}>
+            <p>{title}</p>
+            <p>{text}</p>
+            <p>{rating}</p>
           </li>
         ))}
       </ul>
