@@ -4,7 +4,7 @@ import "./Reviews";
 const { Schema } = mongoose;
 
 const productSchema = new Schema({
-  name: { type: String, reqire: true },
+  name: { type: String, require: true },
   description: { type: String, require: true },
   price: { type: Number, require: true },
   currency: { type: String, require: true },
